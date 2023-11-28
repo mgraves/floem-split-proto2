@@ -31,6 +31,7 @@ pub fn split_dragger(width_signal: RwSignal<f64>, is_resizing: RwSignal<bool>) -
         .background(background_color.get())
         .border_left(2)
         .border_color(background_color.get())
+        .cursor(CursorStyle::ColResize)
         .hover(|s| {
           s.border_color(DRAG_DIVIDER_COLOR)
             .cursor(CursorStyle::ColResize)
