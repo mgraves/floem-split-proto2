@@ -51,7 +51,7 @@ pub fn split_dragger(width_signal: RwSignal<f64>, is_resizing: RwSignal<bool>) -
       if let Event::PointerMove(pointer_event) = event {
         if is_resizing.get() {
           let delta = pointer_event.pos.x - mouse_pos.get().0;
-          if delta.abs() > 10.0 {
+          if delta.abs() > 3.0 {
             let old_width = width_signal.get();
             width_signal.update(move |width| { *width += delta });
             let new_width = width_signal.get();
